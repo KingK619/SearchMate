@@ -1,5 +1,7 @@
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
+from signalepy import Signale
+logger = Signale() 
 
 def linkparser(link):
 	url = link
@@ -19,4 +21,5 @@ def linkparser(link):
 		return text
 
 	except Exception as err :
-		print("Error in " , link, err)
+		print("\n")
+		logger.debug(link, err)

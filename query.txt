@@ -1,5 +1,10 @@
-Over SSL connections, the entirety is encrypted which include the packet headers and content material. Any caching that could have occurred among the factors at which statistics is encrypted and decrypted is blocked if content is encrypted. If you’re the use of a machine like Varnish to cache CMS content, it’s important to have a server out in the front of the cache to address encryption, which provides some complexity to personal caching efforts, but a good way to be sorted through any respectable internet web hosting agency.
+The most basic Ansi escape codes are those involved in rendering text. These let you add decorations like Colors, Background Colors or other Decorations to your printed text, but don't do anything fancy. The text you print will still end up at the bottom of the terminal, and still make your terminal scroll, just now it will be colored text instead of the default black/white color scheme your terminal has.
 
-Any public caching that would have happened can't show up. ISPs and others will no longer be able to cache encrypted content. Whether this is genuinely an problem at all depends on person condition, so trying out is fundamental yet again. Public proxy caching has been declining in recent years, to be replaced by using content material distribution networks, which in many cases work flawlessly well with HTTPS.
+Colors
+The most basic thing you can do to your text is to color it. The Ansi colors all look like
 
-Most of the capacity negative aspects gained’t have an effect on small to medium-sized websites. It’s simplest the sincerely large web sites that might need to assume two times about implementing HTTPS, and even then the negatives are in all likelihood outweighed by means of the advantages, which we’ll check now.
+Red: \u001b[31m
+Reset: \u001b[0m
+This \u001b character is the special character that starts off most Ansi escapes; most languages allow this syntax for representing special characters, e.g. Java, Python and Javascript all allow the \u001b syntax.
+
+For example here is printing the string "Hello World", but red:

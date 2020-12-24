@@ -1,11 +1,19 @@
 import docxpy, pdfplumber, os
 import magic
-def extractDocx():
+from os import path
+from signalepy import Signale
+logger = Signale() 
+
+def extractDocx(filename):
 	query=""
 	Lines=""
 	f = magic.Magic(mime=True)
-	filename = input("Enter your filename with extension. Supported Formats [[[PDF, DOCX, TXT]]]: ") 
-	fileType = f.from_file(filename)
+	fileType=""
+	if path.exists(filename):
+		fileType = f.from_file(filename)
+	else:
+		logger.error("File Doesnot exists")
+		exit()
 
 	if fileType == "text/plain":
 		try:
@@ -16,7 +24,7 @@ def extractDocx():
 			return query
 
 		except Exception as e:
-			print('Error!!!! '+ str(e))
+			logger.error('Error!!!! '+ str(e))
 			exit()
 
 	if fileType == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
@@ -24,7 +32,7 @@ def extractDocx():
 			query = docxpy.process(filename)
 			return query
 		except Exception as e:
-			print('Error!!!! '+ str(e))
+			logger.error('Error!!!! '+ str(e))
 			exit()	
 
 	if fileType == "application/pdf":
@@ -35,10 +43,10 @@ def extractDocx():
 	
 			    return page.extract_text()
 		except Exception as e:
-			print('Error!!!! '+ str(e))
+			logger.error('Error!!!! '+ str(e))
 			exit()
 
 	else:
-		print("File Format not Supported. Supported Formats [[[PDF, DOCX, TXT]]]")
+		logger.error("File Format not Supported. Supported Formats [[[PDF, DOCX, TXT]]]")
 		exit()		        
 

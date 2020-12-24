@@ -40,6 +40,11 @@ def computeIDF(docList):
         
     return idfDict
 
+def computeTFIDF(tfBow, idfs):
+    tfidf = {}
+    for word, val in tfBow.items():
+        tfidf[word] = val*idfs[word]	   
+    return tfidf
 
 def similarity(tfBowA, tfBowB, bowA, bowB):
 	sum =0
