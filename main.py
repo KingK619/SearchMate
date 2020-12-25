@@ -1,14 +1,15 @@
 import click
-from pyfiglet import Figlet
+from pyfiglet import Figlet,figlet_format
 from extractDocx import *
 from initiating import *
+from output import *
 from signalepy import Signale
 logger = Signale() 
 
 f = Figlet(font='slant')
 
 print(f.renderText('SearchMate'))
-logger.info("Finding Please hold tight!!!", prefix="Debugger")
+
 @click.command()
 @click.option('--filename', '-f',
               type=click.Path(),
@@ -25,8 +26,11 @@ def main(filename,output_directory):
              example: python3 convert_parse.py -i input/file/path -o output/path
     """
     query = extractDocx(filename)
-    initiating(query)
-
+    sorted_results = initiating(query)
+    saveResults(sorted_results, output_directory)
+    logger.complete("Results stored in " + output_directory)
+    end = figlet_format('GoodBye!!',font = 'digital')
+    print(end)
 
 if __name__ == '__main__':
     main()

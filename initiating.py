@@ -12,7 +12,7 @@ import re
 import random
 import time,sys
 from signalepy import Signale
-from pyfiglet import Figlet
+from halo import Halo
 logger = Signale() 
 
 
@@ -36,6 +36,7 @@ def sample_with_minimum_distance(n=40, k=4, d=10):
 
 def initiating(query):
 	load_dotenv()
+	logger.info("Finding Please hold tight!!!")
 	my_api_key = os.environ.get("API_KEY")
 	my_cse_id = os.environ.get("CSE_ID")
 
@@ -69,12 +70,14 @@ def initiating(query):
 	count = 0
 	results = {}
 	logger.watch("Getting Results...")
+	spinner = Halo(text='Loading', text_color = "yellow", spinner='dots', animation = 'bounce')
+	spinner.start()
 	for link in sorted_links.keys():
-		time.sleep(0.1)
-		sys.stdout.write("Getting Results...")
-		sys.stdout.write(u"\u001b[1000D" + str(int(count/0.15)) + "%")
-		sys.stdout.flush()
-		print
+		# time.sleep(0.1)
+		# sys.stdout.write("Loading...")
+		# sys.stdout.write(u"\u001b[1000D" + str(int(count/0.15)) + "%")
+		# sys.stdout.flush()
+		# print
 		count+=1
 		if count<15:
 			try:
@@ -104,7 +107,7 @@ def initiating(query):
 				results[link] = sim  
 		else:
 			break
-
+	spinner.stop()
 	sorted_results = dict(sorted(results.items(), key=operator.itemgetter(1),reverse=True))
 	print("\n\n\n")
 	logger.important("\033[1;32;40m FINAL RESULTS====>")
@@ -114,5 +117,5 @@ def initiating(query):
 	
 	print("\n\n")
 	logger.success("Run Complete")
-	f = Figlet(font='slant')
-	print(f.renderText('GoodBye!!'))
+	print("\n")
+	return sorted_results
