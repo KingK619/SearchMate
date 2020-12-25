@@ -15,15 +15,17 @@ print(f.renderText('SearchMate'))
               type=click.Path(),
               required=True, help="Path to the file")
 
-@click.option('--output_directory', '-o',default="./results.txt",
-              help='Where to place the results')
+@click.option('--output_directory', '-o',default="./",
+              type=click.Path(), help='Where to place the results. Default = Current Directory')
 
 
 def main(filename,output_directory):
     """
-            audioConvertor is a command line tool that helps convert
-            video files to audio file formats.\n
-             example: python3 convert_parse.py -i input/file/path -o output/path
+            SearchMate is CLI tool that helps in searching the equivalent content over
+            the internet by taking refernce of a document(.txt,.pdf,.docx) and list down the URL to them with their appropriate find scores.\n
+            Example: python main.py -f input/file/path -o output/path
+
+            © SearchMate 2020
     """
     query = extractDocx(filename)
     sorted_results = initiating(query)

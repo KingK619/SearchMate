@@ -12,7 +12,7 @@ def extractDocx(filename):
 	if path.exists(filename):
 		fileType = f.from_file(filename)
 	else:
-		logger.error("File Doesnot exists")
+		logger.error("Input File Doesnot exists")
 		exit()
 
 	if fileType == "text/plain":

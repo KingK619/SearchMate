@@ -2,7 +2,6 @@ from preprocessing import *
 from nltk import FreqDist, word_tokenize
 from collections import Counter
 import math
-import pandas as pd
 import operator
 import os 
 

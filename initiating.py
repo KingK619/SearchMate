@@ -73,11 +73,6 @@ def initiating(query):
 	spinner = Halo(text='Loading', text_color = "yellow", spinner='dots', animation = 'bounce')
 	spinner.start()
 	for link in sorted_links.keys():
-		# time.sleep(0.1)
-		# sys.stdout.write("Loading...")
-		# sys.stdout.write(u"\u001b[1000D" + str(int(count/0.15)) + "%")
-		# sys.stdout.flush()
-		# print
 		count+=1
 		if count<15:
 			try:
@@ -110,7 +105,7 @@ def initiating(query):
 	spinner.stop()
 	sorted_results = dict(sorted(results.items(), key=operator.itemgetter(1),reverse=True))
 	print("\n\n\n")
-	logger.important("\033[1;32;40m FINAL RESULTS====>")
+	logger.important("\033[1;32;40m FINAL RESULTS ====>")
 	for link,score in sorted_results.items():
 		logger.important(link,"Url: ")
 		logger.info(score," Find Score: ")
