@@ -1,8 +1,7 @@
-import re, nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
-from nltk import FreqDist, word_tokenize
 from num2words import num2words
+from modules import *
 
 """
     Function to clean text of websites, email addresess and any punctuation

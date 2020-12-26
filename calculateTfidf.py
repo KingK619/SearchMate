@@ -1,9 +1,5 @@
 from preprocessing import *
-from nltk import FreqDist, word_tokenize
-from collections import Counter
-import math
-import operator
-import os 
+from modules import *
 
 def wordFreqA(bowA, wordDictA):
 	for word in bowA:

@@ -1,18 +1,13 @@
-import os
-import htmlstrip
-from nltk import FreqDist, word_tokenize
 from dotenv import load_dotenv
 from calculateTfidf import *
 from preprocessing import *
 from googleapi import *
 from search_results import *
-from htmlstrip import *
 from extractDocx import *
-import re
 import random
-import time,sys
-from signalepy import Signale
-from halo import Halo
+import htmlstrip
+from modules import *
+
 logger = Signale() 
 
 

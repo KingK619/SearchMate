@@ -1,14 +1,12 @@
 import click
-from pyfiglet import Figlet,figlet_format
+from modules import *
 from extractDocx import *
-from initiating import *
+from __init__ import *
 from output import *
-from signalepy import Signale
 logger = Signale() 
 
 f = Figlet(font='slant')
-
-print(f.renderText('SearchMate'))
+print((colored(figlet_format("SearchMate"), color="yellow")))
 
 @click.command()
 @click.option('--filename', '-f',
@@ -32,11 +30,31 @@ def main(filename,output_directory,developer,qna):
             © SearchMate 2020
     """
     if qna:
-        click.echo("Q1. What is Find Score?")
-        exit()
+      click.echo(
+    """
+  \033[96mQ1. What is Find Score?\n
+  Find Score is being referred to as an algorithm that
+  is calculating the similarity scores for the provided
+  document over the internet.
+
+  \033[96mQ2. What Packages are required to run this tool?\n
+  We have included a requirements.txt file which has all 
+  the required modules. Just run\033[93m pip install requirements.txt
+
+  \033[96mQ3. How accurate the tool is?
+  The tool searches web based on the document you provide to
+  give results similar to the query. Accuracy of tool is around 95%. 
+    """
+          )
+      exit()
 
     if developer:
-        click.echo("Some shit About the developers...")
+        click.echo(
+    """  1. Hiten Goyal (Founder)
+
+  2. Karanveer Sidana (Co Founder)
+    """
+          )
         exit()
     if(filename):
         query = extractDocx(filename)

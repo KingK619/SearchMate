@@ -1,7 +1,5 @@
-import docxpy, pdfplumber, os
-import magic
-from os import path
-from signalepy import Signale
+from modules import *
+
 logger = Signale() 
 
 def extractDocx(filename):
