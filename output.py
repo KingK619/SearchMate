@@ -1,3 +1,6 @@
+# script to save results in a txt document.
+# saves links with their corresponding find score. 
+
 import os
 
 def saveResults(sorted_results,output_directory):

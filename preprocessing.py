@@ -14,9 +14,8 @@ def clean_text(text):
         text = text.replace(i, ' ')    
     return text.lower()
 
-    """
-    Function that removes all stopwords from text
-    """
+   
+# Function that removes all stopwords from text
 def remove_stop_words(text):
     stop_words = stopwords.words('english')
     words = word_tokenize(str(text))
@@ -26,6 +25,7 @@ def remove_stop_words(text):
             new_text = new_text + " " + word
     return new_text
 
+# Fucntion to remove single characters like 'A', '1', 'b'
 def single_character(text):
     new_text = ""
     words = word_tokenize(str(text))
@@ -34,9 +34,7 @@ def single_character(text):
             new_text = new_text + " " + w
     return new_text   
 
-"""
-    Function to stem words, so plural and singular are treated the same
-    """
+# Function to stem words, so plural and singular are treated the same
 def stem_words(text):
     stemmer= PorterStemmer()
     tokens = word_tokenize(str(text))
@@ -45,7 +43,7 @@ def stem_words(text):
         new_text = new_text + " " + stemmer.stem(w)
     return new_text
 
-
+# function to convert numeric digits to alphabetic digits Ex: 100 -> "Hundred" 
 def convert_numbers(text):
     tokens = word_tokenize(str(text))
     new_text = ""
@@ -66,8 +64,8 @@ def apply_all_preprocessing(text):
     text = convert_numbers(text)
     text = stem_words(text)
     text = convert_numbers(text)
-    text = stem_words(text)
-    text = clean_text(text)
-    text = remove_stop_words(text)
+    text = stem_words(text)    #needed again as we need to stem the words
+    text = clean_text(text)    #needed again as num2word is giving few hypens and commas fourty-one
+    text = remove_stop_words(text)  #needed again as num2word is giving stop words 101 - one hundred and one
     return text
     

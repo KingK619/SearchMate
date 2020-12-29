@@ -1,8 +1,14 @@
+# -*- coding: utf-8 -*-
+# Master script for the SearchMate
+# Coded by: Hiten Goyal & Karanvver Sidana
+
 import click
 from modules import *
 from extractDocx import *
 from __init__ import *
 from output import *
+
+# logs stats of SearchMate on console
 logger = Signale() 
 
 f = Figlet(font='slant')
@@ -24,7 +30,7 @@ print((colored(figlet_format("SearchMate"), color="yellow")))
 def main(filename,output_directory,developer,qna):
     """
             SearchMate is CLI tool that helps in searching the equivalent content over
-            the internet by taking refernce of a document(.txt,.pdf,.docx) and list down the URL to them with their appropriate find scores.\n
+            the internet by taking reference of a document(.txt,.pdf,.docx) and list down the URL with their appropriate find scores.\n
             Example: python main.py -f input/file/path -o output/path
 
             © SearchMate 2020

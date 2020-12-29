@@ -1,14 +1,17 @@
 from preprocessing import *
 from modules import *
 
+# Calulate word Frequency of query document 
 def wordFreqA(bowA, wordDictA):
 	for word in bowA:
 	    wordDictA[word]+=1
 
+# Calculate word frequency of source parsed
 def wordFreqB(bowB, wordDictB): 
 	for word in bowB:
 	    wordDictB[word]+=1
 
+# Compute Term Frequency
 def computeTF(wordDict, bow):
     tfDict = {}
     bowCount = len(bow)
@@ -19,6 +22,7 @@ def computeTF(wordDict, bow):
         	continue	
     return tfDict
 
+# Compute Inverse Document Frequency
 def computeIDF(docList):
     import math
     idfDict = {}
@@ -35,12 +39,14 @@ def computeIDF(docList):
         
     return idfDict
 
+# Compute Inverse Inverse Document Frequency
 def computeTFIDF(tfBow, idfs):
     tfidf = {}
     for word, val in tfBow.items():
         tfidf[word] = val*idfs[word]	   
     return tfidf
 
+# Calculate similarity of query and source documents
 def similarity(tfBowA, tfBowB, bowA, bowB):
 	sum =0
 	totalSum=0
@@ -54,13 +60,13 @@ def similarity(tfBowA, tfBowB, bowA, bowB):
 	else:	
 		return (sum)/(totalSum*len(bowA))
 
-def generateQuery(tfBowA):
-	tfBowA_sorted = dict( sorted(tfBowA.items(), key=operator.itemgetter(1),reverse=True))
-	query = ""
-	for key,value in tfBowA_sorted.items():
-		if value!=0:
-			query+=key+" "
+# def generateQuery(tfBowA):
+# 	tfBowA_sorted = dict( sorted(tfBowA.items(), key=operator.itemgetter(1),reverse=True))
+# 	query = ""
+# 	for key,value in tfBowA_sorted.items():
+# 		if value!=0:
+# 			query+=key+" "
 
-	return query
+# 	return query
 
 

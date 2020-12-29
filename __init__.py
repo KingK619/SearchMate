@@ -29,6 +29,7 @@ def sample_with_minimum_distance(n=40, k=4, d=10):
     else:
     	return [s + (d-1)*r for s, r in zip(sample, ranks(sample))]
 
+# Fucntion to make calls to other functions
 def initiating(query):
 	load_dotenv()
 	logger.info("Finding Please hold tight!!!")

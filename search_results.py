@@ -1,7 +1,8 @@
+# script takes json returned by google search and stores links and meta description 
 import json
 import re
 
-class my_dictionary(dict): 
+class my_dictionary(dict):           # class of dictionary
 		def __init__(self):  
 			self = dict()  
 		def add(self, key, value):  
@@ -13,8 +14,8 @@ def google_results(formatedJson):
 	searchResults = my_dictionary()
     
 	for a in data['items']:
-		link = a["link"]
-		snip = a["htmlSnippet"]
+		link = a["link"]             # store links
+		snip = a["htmlSnippet"]		# store meta description	
 		clean = re.compile('<.*?>')
 		searchResults.key = link
 		searchResults.value = re.sub(clean, '', snip)

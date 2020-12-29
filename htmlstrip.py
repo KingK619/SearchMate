@@ -1,3 +1,6 @@
+# script to strip given text from HTML tags
+# usecase: Content from webpages recovered may have stray HTML tags, like <b> or <i>
+
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 from signalepy import Signale

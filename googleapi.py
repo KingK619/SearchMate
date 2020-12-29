@@ -1,3 +1,4 @@
+# Google Search the query statement and get all the results as in json format
 import json
 from googleapiclient.discovery import build
 
