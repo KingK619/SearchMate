@@ -65,6 +65,10 @@ $ python main.py -f file_name -o your_path
 ```
 it will redirect the output to whatever path you've mentioned with the default file name.
 
+There is also a faq section, you can check it out! 
+```sh
+$ python main.py --qna
+```
 
 ### Development
 
