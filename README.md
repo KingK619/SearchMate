@@ -26,7 +26,7 @@ SearchMate is CLI tool that helps in searching the equivalent content over the i
 ‎
 ‎
     
->**Note:** Make sure that terminal is opened in the same directory where the tools files are kept.
+>**Note:** Make sure that terminal is opened in the same directory where the tool files are kept.
 
 ‎
 
