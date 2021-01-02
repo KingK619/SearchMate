@@ -15,7 +15,7 @@ SearchMate is CLI tool that helps in searching the equivalent content over the i
   - Many of them aren't even ranked properly on google. So, it will help in exploring 
     some **rare treasures**!
   - Colorful CLI will help in better understanding of the things.
-  - It can accept multiple files of formats containing your content like `.txt`, `.docx`,
+  - It can accept multiple formats of the file containing your content like `.txt`, `.docx`,
    `.pdf`(containg text and not text on images).
   - `Find Score` feartures lets you know how much of text in that link matchs yours.
   - Save results in a `.txt` file so you can refer it later.
