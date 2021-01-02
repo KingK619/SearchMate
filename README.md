@@ -57,6 +57,7 @@ $ python main.py -f file_name
 ```
 After executing the above command, the links will be fetched and stored in the same
 directory with the file name `results.txt`as well as displayed on the terminal.
+For demo purpose, a file named query.txt is already there.
 
 If you wish to store the results in a **specific path**, you'll need to execute the
 following command instead.
