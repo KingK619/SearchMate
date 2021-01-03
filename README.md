@@ -113,8 +113,6 @@ contributing to the project, who is quite literally the backbone of this project
 He has also provided valuable feedback and support during the development
 of this app.
 
-`Click <http://click.pocoo.org/>`_ is used for command line option parsing
-and printing error messages.
 
-Thanks to all the beta testers and contributors for your time and patience. :)
+Thanks to all the beta testers for your time and patience. :)
 
