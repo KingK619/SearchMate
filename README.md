@@ -108,7 +108,7 @@ We'll be delighted to get your feedbacks!
 
 ## Thanks
 
-A special thanks to `Karanveer Sidana` for
+A special thanks to `Hiten Goyal` for
 contributing to the project, who is quite literally the backbone of this project, that made this tool possible.
 He has also provided valuable feedback and support during the development
 of this app.
