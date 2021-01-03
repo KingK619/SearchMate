@@ -24,6 +24,12 @@ SearchMate is CLI tool that helps in searching the equivalent content over the i
   - Save results in a `.txt` file so you can refer it later.
   - You can store the output which is by default named `results.txt` in the path you wish, 
     
+<br>
+<img src = "https://github.com/KingK619/SearchMate/blob/main/demo.gif" />
+    
+    
+<br>
+
 >**Note:** Make sure that terminal is opened in the same directory where the tool files are kept.
 
 ## Supported Python Versions
