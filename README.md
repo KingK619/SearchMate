@@ -44,7 +44,7 @@ Python < 3
 
 After cloning this repository you will be requiring some packages to install. Ofcourse you will need 
 [`python`](https://www.python.org/)  but there are few other dependencies that are require to use this application.  All of them 
-are listed in  the [`requirements.txt`](https://github.com/techyhoney/SearchMate/blob/main/requirements.txt) file. You just have to follow the instructions below
+are listed in  the [`requirements.txt`](https://github.com/KingK619/SearchMate/blob/main/requirements.txt) file. You just have to follow the instructions below
 in order to install them.
 
 Open the terminal and execute the following command.
